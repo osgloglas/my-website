@@ -13,14 +13,18 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     margin-top: 10px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-.homepage-button {
+.navigation-button, .gamedev-dropdown-button, .project-dropdown-button {
     width: 150px;
     height: 50px;
+    margin-right: 20px;
     
     border-radius: 12px;
-
     border: none;
     outline: none;
     color: white;
@@ -29,7 +33,7 @@ body {
     z-index: 0;
 }
 
-.homepage-button::after {
+.navigation-button::after, .gamedev-dropdown-button::after, .project-dropdown-button::after {
     content: "";
     z-index: -1;
     position: absolute;
@@ -41,11 +45,11 @@ body {
     border-radius: 10px;
 }
 
-.homepage-button::before {
+.navigation-button::before, .gamedev-dropdown-button::before, .project-dropdown-button::before {
     content: "";
     background: linear-gradient(
         45deg,
-        #42f5b0, #af5eff, #cccccc, #42f5b0, #af5eff, #cccccc
+        #42f5b0, #af5eff, #42f5b0, #af5eff
     );
     position: absolute;
     top: -2px;
@@ -63,15 +67,15 @@ body {
     opacity: 0;
 }
 
-.homepage-button:hover::before {
+.navigation-button:hover::before, .gamedev-dropdown-button:hover::before, .project-dropdown-button:hover::before {
     opacity: 1;
 }
 
-.homepage-button:active:after {
+.navigation-button:active:after, .gamedev-dropdown-button:active:after, .project-dropdown-button:active:before {
     background: transparent;
 }
 
-.homepage-button:active {
+.navigation-button:active, .gamedev-dropdown-button:active, .project-dropdown-button:active {
     color: black;
     font-weight: bold;
 }
@@ -80,4 +84,40 @@ body {
     0% {background-position: 0 0;}
     50% {background-position: 400% 0;}
     100% {background-position: 0 0;}
+}
+
+.navigation-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none; /* Keeps it hidden */
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    z-index: 10;
+
+    top: 100%;
+}
+
+.gamedev-dropdown-content a, .project-dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.gamedev-dropdown-content a:hover, .project-dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.gamedev-dropdown-content.show {
+    display: block;
+}
+
+.project-dropdown-content.show {
+    display: block;
 }

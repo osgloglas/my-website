@@ -7,7 +7,32 @@
     </head>
     <body>
         <div class="top-rectangle">
-            <button class="homepage-button">Homepage</button>
+            <button class="navigation-button">Home/About Me</button>
+            <button class="navigation-button">Resume</button>
+
+            <div class="navigation-dropdown">
+                <button class="gamedev-dropdown-button" onclick="toggleGamedevDropdown()">Game Development ▾</button>
+
+                <div id="gamedevDropdown" class="gamedev-dropdown-content">
+                    <a href="#">Sandcastle</a>
+                    <a href="#">A Hero's Journey</a>
+                    <a href="#">Roguelike Unnamed</a>
+                </div>
+            </div>
+
+            <div class="navigation-dropdown">
+                <button class="project-dropdown-button" onclick="toggleProjectDropdown()">Projects ▾</button>
+
+                <div id="projectDropdown" class="project-dropdown-content">
+                    <a href="#">Photography</a>
+                    <a href="#">Crochet</a>
+                    <a href="#">LEGO</a>
+                    <a href="#">Digital Art</a>
+                    <a href="#">3D Modeling</a>
+                </div>
+            </div>
+
+            <button class="navigation-button">Contact</buton>
         </div>
 
         <h1>Hello!</h1>
